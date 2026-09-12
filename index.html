@@ -1,11 +1,219 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Массаж в Луганске</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Массаж и SPA в Луганске</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0d0d0d;
+    color: #f0e6d2;
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.6;
+  }
+  h1, h2, h3 { font-family: 'Trajan Pro', Georgia, serif; color: #d4af37; }
+  a { color: #d4af37; text-decoration: none; }
+
+  header {
+    background: #000;
+    border-bottom: 2px solid #d4af37;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  header h1 { font-size: 1.8em; letter-spacing: 3px; }
+  header p { color: #b0a888; font-size: 0.9em; margin-top: 5px; }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+  }
+  nav a {
+    padding: 8px 18px;
+    border: 1px solid #d4af37;
+    border-radius: 30px;
+    font-size: 0.95em;
+    transition: 0.3s;
+  }
+  nav a:hover { background: #d4af37; color: #000; }
+
+  section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 80px 20px;
+    border-bottom: 1px solid #333;
+  }
+  .hero h2 { font-size: 2.2em; margin-bottom: 15px; }
+  .hero p { color: #cfc4a3; max-width: 600px; margin: 0 auto; }
+
+  .category-btn {
+    width: 100%;
+    background: #1a1a1a;
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    padding: 18px 25px;
+    text-align: left;
+    font-size: 1.1em;
+    font-family: Georgia, serif;
+    cursor: pointer;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+  }
+  .category-btn:hover { background: #2a2a2a; }
+  .category-btn.active { background: #d4af37; color: #000; }
+
+  .service-list {
+    display: none;
+    background: #151515;
+    padding: 0;
+    margin-bottom: 15px;
+    border-left: 2px solid #d4af37;
+  }
+  .service-list.open { display: block; }
+  .service-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 25px;
+    border-bottom: 1px solid #262626;
+    color: #e8ddc0;
+  }
+  .service-item:last-child { border-bottom: none; }
+  .service-item span.price { color: #d4af37; font-weight: bold; white-space: nowrap; margin-left: 15px; }
+
+  .about-box {
+    background: #151515;
+    border: 1px solid #333;
+    padding: 30px;
+    border-radius: 8px;
+  }
+
+  .contacts p { margin-bottom: 12px; font-size: 1.05em; }
+  .contacts .label { color: #d4af37; }
+
+  footer {
+    text-align: center;
+    padding: 25px;
+    color: #777;
+    border-top: 1px solid #333;
+    font-size: 0.85em;
+  }
+</style>
 </head>
 <body>
-    <h1>Массажный салон в Луганске</h1>
-    <p>Профессиональный массаж для здоровья и расслабления.</p>
+
+<header>
+  <h1>MASSAGE &amp; SPA</h1>
+  <p>Луганск · Аппаратный и ручной массаж · Коррекция фигуры</p>
+  <nav>
+    <a href="#home">Главная</a>
+    <a href="#services">Услуги и цены</a>
+    <a href="#about">О мастере</a>
+    <a href="#contacts">Контакты / Запись</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h2>Красота и расслабление в надёжных руках</h2>
+  <p>Салон массажа и аппаратной косметологии для мужчин и женщин. Современное оборудование премиум-класса и классический ручной массаж — всё в одном месте.</p>
+</section>
+
+<section id="services">
+  <h2 style="text-align:center; margin-bottom:30px;">Услуги и цены</h2>
+
+  <button class="category-btn" onclick="toggleCategory(this,'cat1')">Ручной и классический массаж <span>+</span></button>
+  <div class="service-list" id="cat1">
+    <div class="service-item"><span>Классический массаж (спина)</span><span class="price">от 1500 ₽</span></div>
+    <div class="service-item"><span>Классический массаж (всё тело)</span><span class="price">от 3000 ₽</span></div>
+    <div class="service-item"><span>Ручной антицеллюлитный массаж</span><span class="price">от 2000 ₽</span></div>
+  </div>
+
+  <button class="category-btn" onclick="toggleCategory(this,'cat2')">Аппаратные процедуры для тела <span>+</span></button>
+  <div class="service-list" id="cat2">
+    <div class="service-item"><span>Вакуумно-лазерный 5D-массаж (AnchorFree V8C2)</span><span class="price">от 2500 ₽</span></div>
+    <div class="service-item"><span>Vela-Shape</span><span class="price">от 2200 ₽</span></div>
+    <div class="service-item"><span>LPG-массаж</span><span class="price">от 2000 ₽</span></div>
+    <div class="service-item"><span>Вакуумно-роликовый массаж + RF-лифтинг + ИК-прогрев</span><span class="price">от 2400 ₽</span></div>
+    <div class="service-item"><span>Вакуумный массаж</span><span class="price">от 1800 ₽</span></div>
+    <div class="service-item"><span>Субдермальный вибрационный турбо-массаж</span><span class="price">от 2000 ₽</span></div>
+  </div>
+
+  <button class="category-btn" onclick="toggleCategory(this,'cat3')">Коррекция фигуры <span>+</span></button>
+  <div class="service-list" id="cat3">
+    <div class="service-item"><span>Ультразвуковая вакуумная кавитация</span><span class="price">от 2500 ₽</span></div>
+    <div class="service-item"><span>Липосакция-кавитация</span><span class="price">от 3000 ₽</span></div>
+    <div class="service-item"><span>«Жиротоп» / редуктор жира</span><span class="price">от 2200 ₽</span></div>
+    <div class="service-item"><span>RF-лифтинг тела</span><span class="price">от 2000 ₽</span></div>
+  </div>
+
+  <button class="category-btn" onclick="toggleCategory(this,'cat4')">Уход за лицом <span>+</span></button>
+  <div class="service-list" id="cat4">
+    <div class="service-item"><span>RF-лифтинг лица</span><span class="price">от 1800 ₽</span></div>
+    <div class="service-item"><span>Омоложение кожи</span><span class="price">от 2000 ₽</span></div>
+    <div class="service-item"><span>Скраб-массаж</span><span class="price">от 1200 ₽</span></div>
+    <div class="service-item"><span>Пилинг-массаж</span><span class="price">от 1300 ₽</span></div>
+  </div>
+
+  <button class="category-btn" onclick="toggleCategory(this,'cat5')">Эпиляция и солярий <span>+</span></button>
+  <div class="service-list" id="cat5">
+    <div class="service-item"><span>Гибридная лазерная трёхволновая эпиляция</span><span class="price">от 1500 ₽</span></div>
+    <div class="service-item"><span>Солярий (1 сеанс)</span><span class="price">от 500 ₽</span></div>
+  </div>
+
+  <button class="category-btn" onclick="toggleCategory(this,'cat6')">Ногтевой сервис <span>+</span></button>
+  <div class="service-list" id="cat6">
+    <div class="service-item"><span>Маникюр</span><span class="price">от 1000 ₽</span></div>
+    <div class="service-item"><span>Педикюр</span><span class="price">от 1300 ₽</span></div>
+  </div>
+
+  <p style="text-align:center; color:#999; margin-top:20px; font-size:0.9em;">Услуги доступны для мужчин и женщин. Цены уточняйте при записи.</p>
+</section>
+
+<section id="about">
+  <h2 style="text-align:center; margin-bottom:25px;">О мастере</h2>
+  <div class="about-box">
+    <p>Здесь будет рассказ о мастере: опыт работы, образование, сертификаты, специализация. Можно добавить фото и пару слов о подходе к клиентам.</p>
+  </div>
+</section>
+
+<section class="contacts" id="contacts">
+  <h2 style="text-align:center; margin-bottom:25px;">Контакты и запись</h2>
+  <p><span class="label">Адрес:</span> г. Луганск, ул. Рабкоровская 145</p>
+  <p><span class="label">Телефон:</span> +7 (___) ___-__-__</p>
+  <p><span class="label">Режим работы:</span> ежедневно, 9:00–20:00</p>
+  <p><span class="label">Запись:</span> по телефону или сообщением в мессенджер</p>
+</section>
+
+<footer>
+  © 2026 Massage &amp; SPA Луганск. Сайт создан в учебных целях.
+</footer>
+
+<script>
+function toggleCategory(btn, id) {
+  var list = document.getElementById(id);
+  var isOpen = list.classList.contains('open');
+  document.querySelectorAll('.service-list').forEach(function(el){ el.classList.remove('open'); });
+  document.querySelectorAll('.category-btn').forEach(function(el){ el.classList.remove('active'); el.querySelector('span').textContent = '+'; });
+  if (!isOpen) {
+    list.classList.add('open');
+    btn.classList.add('active');
+    btn.querySelector('span').textContent = '−';
+  }
+}
+</script>
+
 </body>
 </html>
