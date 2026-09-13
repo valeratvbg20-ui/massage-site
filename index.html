@@ -24,6 +24,18 @@
     100% { background-position: 0% 50%; }
   }
 
+  @keyframes textShimmer {
+    0% { color: #ffea00; }
+    50% { color: #d4af37; }
+    100% { color: #ffea00; }
+  }
+ 
+  .shimmer-text {
+    animation: textShimmer 4s ease-in-out infinite;
+  }
+  .about-box p { margin-bottom: 12px; }
+  .about-box p:last-child { margin-bottom: 0; }
+
   h1, h2, h3 { color: #d4af37; }
   a { color: #d4af37; text-decoration: none; }
 
@@ -330,7 +342,10 @@
 <section id="about">
   <h2 class="title">О мастере</h2>
   <div class="about-box">
-    <p>Здесь будет рассказ о мастере: опыт работы, образование, сертификаты, специализация.</p>
+    <p class="shimmer-text" style="font-size:1.3em; text-align:center;">Красота, уход и стройность — с заботой о вас 💆‍♀️✨</p>
+    <p>Здравствуйте! Меня зовут <span class="shimmer-text">Нина</span> 🌸</p>
+    <p>Я сертифицированный мастер массажа и эпиляции, косметик-эстетист по уходу за лицом и телом.</p>
+    <p>Приглашаю вас на процедуры для женщин и мужчин — для тех, кто хочет уделять больше внимания своему телу, коже и самочувствию.</p>
   </div>
 </section>
 
