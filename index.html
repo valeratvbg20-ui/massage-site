@@ -381,9 +381,11 @@
 function toggleCategory(btn, id) {
   var list = document.getElementById(id);
   var isOpen = list.classList.contains('open');
-  document.querySelectorAll('.service-list').forEach(function(el){ el.classList.remove('open'); });
-  document.querySelectorAll('.category-btn').forEach(function(el){ el.classList.remove('active'); el.querySelector('span').textContent = '+'; });
-  if (!isOpen) {
+  if (isOpen) {
+    list.classList.remove('open');
+    btn.classList.remove('active');
+    btn.querySelector('span').textContent = '+';
+  } else {
     list.classList.add('open');
     btn.classList.add('active');
     btn.querySelector('span').textContent = '−';
