@@ -57,14 +57,19 @@
   }
 
   .menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 18px;
     padding: 50px 20px 80px;
-    max-width: 420px;
-    margin: 0 auto;
+    max-width: 500px;
+    margin: 0 auto
   }
+  @media (max-width: 480px) {
+    .menu {
+      grid-template-columns: 1fr;
+    }
+  }
+ 
   .menu-btn {
     width: 100%;
     background: #0d0d0d;
@@ -194,10 +199,9 @@
 </header>
 
 <div class="menu">
-  <a class="menu-btn" href="#contacts">КОНТАКТЫ</a>
-  <a class="menu-btn" href="#services">ЦЕНЫ</a>
-  <a class="menu-btn" href="#services">УСЛУГИ</a>
+  <a class="menu-btn" href="#services">УСЛУГИ И ЦЕНЫ</a>
   <a class="menu-btn" href="#gallery">КАРТИНКИ</a>
+  <a class="menu-btn" href="#contacts">КОНТАКТЫ</a>
   <a class="menu-btn" href="#about">О МАСТЕРЕ</a>
 </div>
 
