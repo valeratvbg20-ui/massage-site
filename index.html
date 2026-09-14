@@ -11,34 +11,56 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    background: linear-gradient(135deg, #0a0a0a, #1a1500, #2b2103, #b8860b, #0a0a0a, #ffd700, #0a0a0a);
-    background-size: 400% 400%;
-    animation: shimmer 18s ease infinite;
-    color: #f0e6d2;
+    position: relative;
+    background: linear-gradient(45deg, #050014, #1a0033, #3a0ca3, #7209b7, #c724b1, #560bad, #240046, #050014);
+    background-size: 500% 500%;
+    animation: shimmer 12s ease-in-out infinite;
+    color: #f0e6ff;
     font-family: Georgia, 'Times New Roman', serif;
     line-height: 1.6;
+    overflow-x: hidden;
   }
 
   @keyframes shimmer {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% { background-position: 0% 0%; }
+    25% { background-position: 100% 50%; }
+    50% { background-position: 50% 100%; }
+    75% { background-position: 0% 50%; }
+    100% { background-position: 0% 0%; }
+  }
+
+  #cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(circle 350px at var(--x, 50%) var(--y, 50%), rgba(199,36,177,0.35), rgba(114,9,183,0.15) 40%, transparent 70%);
+    transition: background 0.05s ease-out;
+  }
+
+  body > *:not(#cursor-glow) {
+    position: relative;
+    z-index: 1;
   }
 
   @keyframes textShimmer {
-    0% { color: #ffea00; }
-    50% { color: #d4af37; }
-    100% { color: #ffea00; }
+    0% { color: #c724b1; }
+    33% { color: #9d4edd; }
+    66% { color: #3a0ca3; }
+    100% { color: #c724b1; }
   }
- 
+
   .shimmer-text {
     animation: textShimmer 4s ease-in-out infinite;
   }
   .about-box p { margin-bottom: 12px; }
   .about-box p:last-child { margin-bottom: 0; }
 
-  h1, h2, h3 { color: #d4af37; }
-  a { color: #d4af37; text-decoration: none; }
+  h1, h2, h3 { color: #9d4edd; }
+  a { color: #9d4edd; text-decoration: none; }
 
   header {
     text-align: center;
@@ -47,12 +69,12 @@
   header h1 {
     font-size: 2.2em;
     letter-spacing: 4px;
-    text-shadow: 0 0 12px rgba(212,175,55,0.4);
+    text-shadow: 0 0 14px rgba(157,78,221,0.5);
   }
   header h2 {
     font-size: 1.3em;
     letter-spacing: 8px;
-    color: #cfc4a3;
+    color: #d9c2ff;
     margin-top: 5px;
     font-weight: normal;
   }
@@ -63,32 +85,32 @@
     gap: 18px;
     padding: 50px 20px 80px;
     max-width: 500px;
-    margin: 0 auto
+    margin: 0 auto;
   }
   @media (max-width: 480px) {
     .menu {
       grid-template-columns: 1fr;
     }
   }
- 
+
   .menu-btn {
     width: 100%;
-    background: #0d0d0d;
-    color: #d4af37;
+    background: #0a0a0a;
+    color: #9d4edd;
     font-weight: bold;
     font-size: 1.15em;
     letter-spacing: 2px;
     padding: 20px;
-    border: 1px solid #d4af37;
+    border: 1px solid #000;
     border-radius: 14px;
     text-align: center;
     cursor: pointer;
     transition: 0.3s;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.5);
   }
   .menu-btn:hover {
-    background: #d4af37;
-    color: #0d0d0d;
+    background: #9d4edd;
+    color: #0a0a0a;
     transform: translateY(-2px);
   }
 
@@ -101,9 +123,9 @@
 
   .category-btn {
     width: 100%;
-    background: #111;
-    color: #d4af37;
-    border: 1px solid #d4af37;
+    background: #0a0a0a;
+    color: #9d4edd;
+    border: 1px solid #000;
     padding: 18px 25px;
     text-align: left;
     font-size: 1.1em;
@@ -116,14 +138,14 @@
     align-items: center;
     transition: 0.3s;
   }
-  .category-btn:hover { background: #222; }
-  .category-btn.active { background: #d4af37; color: #000; }
+  .category-btn:hover { background: #1a1a1a; }
+  .category-btn.active { background: #9d4edd; color: #000; }
 
   .service-list {
     display: none;
-    background: #141414;
+    background: #0f0f0f;
     margin-bottom: 15px;
-    border-left: 2px solid #d4af37;
+    border-left: 2px solid #000;
     border-radius: 0 0 10px 10px;
   }
   .service-list.open { display: block; }
@@ -131,10 +153,10 @@
     display: flex;
     justify-content: space-between;
     padding: 14px 25px;
-    border-bottom: 1px solid #262626;
+    border-bottom: 1px solid #1e1e1e;
   }
   .service-item:last-child { border-bottom: none; }
-  .service-item span.price { color: #d4af37; font-weight: bold; white-space: nowrap; margin-left: 15px; }
+  .service-item span.price { color: #9d4edd; font-weight: bold; white-space: nowrap; margin-left: 15px; }
 
   .gallery-grid {
     display: grid;
@@ -142,8 +164,8 @@
     gap: 15px;
   }
   .gallery-placeholder {
-    background: #141414;
-    border: 1px dashed #d4af37;
+    background: #0f0f0f;
+    border: 1px dashed #000;
     border-radius: 12px;
     aspect-ratio: 1;
     display: flex;
@@ -154,35 +176,28 @@
     text-align: center;
     padding: 10px;
   }
- 
-  @keyframes borderShimmer {
-  0% { border-color: #1a1a1a; }
-  50% { border-color: #888; }
-  100% { border-color: #1a1a1a; }
+
+  .gallery-item {
+    border: 3px solid #000;
+    border-radius: 12px;
+    overflow: hidden;
   }
- 
-.gallery-item {
-  border: 3px solid #1a1a1a;
-  border-radius: 12px;
-  overflow: hidden;
-  animation: borderShimmer 3s ease-in-out infinite;
-}
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 
   .about-box {
-    background: #141414;
-    border: 1px solid #333;
+    background: #0f0f0f;
+    border: 1px solid #000;
     padding: 30px;
     border-radius: 14px;
   }
 
   .contacts p { margin-bottom: 12px; font-size: 1.05em; }
-  .contacts .label { color: #d4af37; }
+  .contacts .label { color: #9d4edd; }
 
   .action-buttons {
     display: flex;
@@ -194,14 +209,15 @@
   .action-btn {
     display: inline-block;
     padding: 14px 28px;
-    border: 1px solid #d4af37;
+    border: 1px solid #000;
     border-radius: 14px;
-    color: #d4af37;
+    color: #9d4edd;
     font-weight: bold;
     letter-spacing: 1px;
     transition: 0.3s;
+    background: #0a0a0a;
   }
-  .action-btn:hover { background: #d4af37; color: #000; }
+  .action-btn:hover { background: #9d4edd; color: #000; }
 
   footer {
     text-align: center;
@@ -212,6 +228,8 @@
 </style>
 </head>
 <body>
+
+<div id="cursor-glow"></div>
 
 <header>
   <h1>МАССАЖ И ЭПИЛЯЦИЯ</h1>
@@ -287,31 +305,31 @@
 
   <button class="category-btn" onclick="toggleCategory(this,'cat7')">Лазерная эпиляция — женщины <span>+</span></button>
   <div class="service-list" id="cat7">
-    <div class="service-item" style="color:#d4af37; font-weight:bold; border-bottom:none; padding-bottom:2px;">Ноги</div>
+    <div class="service-item" style="color:#9d4edd; font-weight:bold; border-bottom:none; padding-bottom:2px;">Ноги</div>
     <div class="service-item"><span>Голени + колени</span><span class="price">1000 ₽</span></div>
     <div class="service-item"><span>Бёдра (любая зона)</span><span class="price">500 ₽</span></div>
     <div class="service-item"><span>Бёдра полностью</span><span class="price">1000 ₽</span></div>
     <div class="service-item"><span>Ноги полностью</span><span class="price">1500 ₽</span></div>
-    <div class="service-item" style="color:#d4af37; font-weight:bold; border-bottom:none; padding-bottom:2px;">Бикини</div>
+    <div class="service-item" style="color:#9d4edd; font-weight:bold; border-bottom:none; padding-bottom:2px;">Бикини</div>
     <div class="service-item"><span>По линии</span><span class="price">500 ₽</span></div>
     <div class="service-item"><span>Классическое</span><span class="price">1000 ₽</span></div>
     <div class="service-item"><span>Глубокое</span><span class="price">1500 ₽</span></div>
     <div class="service-item"><span>Половые губы</span><span class="price">500 ₽</span></div>
     <div class="service-item"><span>Межъягодичная зона</span><span class="price">500 ₽</span></div>
     <div class="service-item"><span>Ягодицы</span><span class="price">500 ₽</span></div>
-    <div class="service-item" style="color:#d4af37; font-weight:bold; border-bottom:none; padding-bottom:2px;">Руки</div>
+    <div class="service-item" style="color:#9d4edd; font-weight:bold; border-bottom:none; padding-bottom:2px;">Руки</div>
     <div class="service-item"><span>До локтя</span><span class="price">500 ₽</span></div>
     <div class="service-item"><span>Полностью</span><span class="price">1000 ₽</span></div>
-    <div class="service-item" style="color:#d4af37; font-weight:bold; border-bottom:none; padding-bottom:2px;">Тело</div>
+    <div class="service-item" style="color:#9d4edd; font-weight:bold; border-bottom:none; padding-bottom:2px;">Тело</div>
     <div class="service-item"><span>Подмышки</span><span class="price">500 ₽</span></div>
     <div class="service-item"><span>Линия живота</span><span class="price">500 ₽</span></div>
     <div class="service-item"><span>Живот</span><span class="price">1000 ₽</span></div>
     <div class="service-item"><span>Поясница</span><span class="price">1000 ₽</span></div>
     <div class="service-item"><span>Спина</span><span class="price">1000 ₽</span></div>
     <div class="service-item"><span>Ареолы</span><span class="price">500 ₽</span></div>
-    <div class="service-item" style="color:#d4af37; font-weight:bold; border-bottom:none; padding-bottom:2px;">Лицо</div>
+    <div class="service-item" style="color:#9d4edd; font-weight:bold; border-bottom:none; padding-bottom:2px;">Лицо</div>
     <div class="service-item"><span>Любая зона</span><span class="price">500 ₽</span></div>
-    <div class="service-item" style="color:#d4af37; font-weight:bold; border-bottom:none; padding-bottom:2px;">Комплексы</div>
+    <div class="service-item" style="color:#9d4edd; font-weight:bold; border-bottom:none; padding-bottom:2px;">Комплексы</div>
     <div class="service-item"><span>Глубокое бикини + подмышки</span><span class="price">2000 ₽</span></div>
     <div class="service-item"><span>Бикини + ноги полностью</span><span class="price">2000 ₽</span></div>
     <div class="service-item"><span>Голени + подмышки</span><span class="price">1500 ₽</span></div>
@@ -321,20 +339,20 @@
 
   <button class="category-btn" onclick="toggleCategory(this,'cat8')">Лазерная эпиляция — мужчины <span>+</span></button>
   <div class="service-list" id="cat8">
-    <div class="service-item" style="color:#d4af37; font-weight:bold; border-bottom:none; padding-bottom:2px;">Лицо</div>
+    <div class="service-item" style="color:#9d4edd; font-weight:bold; border-bottom:none; padding-bottom:2px;">Лицо</div>
     <div class="service-item"><span>Зона над верхней губой</span><span class="price">1000 ₽</span></div>
     <div class="service-item"><span>Подбородок</span><span class="price">1000 ₽</span></div>
     <div class="service-item"><span>Щёки</span><span class="price">1000 ₽</span></div>
     <div class="service-item"><span>Лоб</span><span class="price">1000 ₽</span></div>
     <div class="service-item"><span>Лицо полностью</span><span class="price">3000 ₽</span></div>
-    <div class="service-item" style="color:#d4af37; font-weight:bold; border-bottom:none; padding-bottom:2px;">Ноги</div>
+    <div class="service-item" style="color:#9d4edd; font-weight:bold; border-bottom:none; padding-bottom:2px;">Ноги</div>
     <div class="service-item"><span>Ноги полностью</span><span class="price">5000 ₽</span></div>
     <div class="service-item"><span>Голень + колено</span><span class="price">3100 ₽</span></div>
     <div class="service-item"><span>Голень + колено + пальцы</span><span class="price">3200 ₽</span></div>
     <div class="service-item"><span>Внутренняя часть бедра</span><span class="price">2000 ₽</span></div>
     <div class="service-item"><span>Задняя часть бедра</span><span class="price">2000 ₽</span></div>
     <div class="service-item"><span>Бёдра полностью</span><span class="price">3500 ₽</span></div>
-    <div class="service-item" style="color:#d4af37; font-weight:bold; border-bottom:none; padding-bottom:2px;">Тело</div>
+    <div class="service-item" style="color:#9d4edd; font-weight:bold; border-bottom:none; padding-bottom:2px;">Тело</div>
     <div class="service-item"><span>Руки полностью</span><span class="price">3500 ₽</span></div>
     <div class="service-item"><span>Руки до локтя</span><span class="price">2300 ₽</span></div>
     <div class="service-item"><span>Кисти рук</span><span class="price">900 ₽</span></div>
@@ -345,7 +363,7 @@
     <div class="service-item"><span>Спина полностью</span><span class="price">4000 ₽</span></div>
     <div class="service-item"><span>Грудь полностью</span><span class="price">2400 ₽</span></div>
     <div class="service-item"><span>Ореолы груди</span><span class="price">1000 ₽</span></div>
-    <div class="service-item" style="color:#d4af37; font-weight:bold; border-bottom:none; padding-bottom:2px;">Другие зоны</div>
+    <div class="service-item" style="color:#9d4edd; font-weight:bold; border-bottom:none; padding-bottom:2px;">Другие зоны</div>
     <div class="service-item"><span>Бикини классическое</span><span class="price">1900 ₽</span></div>
     <div class="service-item"><span>Бикини глубокое</span><span class="price">3500 ₽</span></div>
     <div class="service-item"><span>Шея</span><span class="price">1700 ₽</span></div>
@@ -416,6 +434,14 @@ function toggleCategory(btn, id) {
     btn.querySelector('span').textContent = '−';
   }
 }
+
+document.addEventListener('mousemove', function(e) {
+  var glow = document.getElementById('cursor-glow');
+  var xPercent = (e.clientX / window.innerWidth) * 100;
+  var yPercent = (e.clientY / window.innerHeight) * 100;
+  glow.style.setProperty('--x', xPercent + '%');
+  glow.style.setProperty('--y', yPercent + '%');
+});
 </script>
 
 </body>
