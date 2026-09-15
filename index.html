@@ -12,21 +12,13 @@
 
   body {
     position: relative;
-    background: linear-gradient(45deg, #050014, #1a0033, #3a0ca3, #7209b7, #c724b1, #560bad, #240046, #050014);
-    background-size: 500% 500%;
-    animation: shimmer 12s ease-in-out infinite;
+    background: radial-gradient(circle at 30% 30%, #7209b7, #050014 60%),
+                radial-gradient(circle at 70% 70%, #c724b1, transparent 60%),
+                #050014;
     color: #f0e6ff;
     font-family: Georgia, 'Times New Roman', serif;
     line-height: 1.6;
     overflow-x: hidden;
-  }
-
-  @keyframes shimmer {
-    0% { background-position: 0% 0%; }
-    25% { background-position: 100% 50%; }
-    50% { background-position: 50% 100%; }
-    75% { background-position: 0% 50%; }
-    100% { background-position: 0% 0%; }
   }
 
   #cursor-glow {
@@ -37,9 +29,23 @@
     height: 100vh;
     pointer-events: none;
     z-index: 0;
-    background: radial-gradient(circle 350px at var(--x, 50%) var(--y, 50%), rgba(199,36,177,0.35), rgba(114,9,183,0.15) 40%, transparent 70%);
-    transition: background 0.05s ease-out;
+    overflow: hidden;
   }
+
+  .blob {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.55;
+    will-change: transform;
+  }
+  #blob1 { background: #9d4edd; }
+  #blob2 { background: #c724b1; }
+  #blob3 { background: #3a0ca3; }
 
   body > *:not(#cursor-glow) {
     position: relative;
@@ -74,7 +80,7 @@
   header h2 {
     font-size: 1.3em;
     letter-spacing: 8px;
-    color: #d9c2ff;
+    color: #9d4edd;
     margin-top: 5px;
     font-weight: normal;
   }
@@ -229,7 +235,11 @@
 </head>
 <body>
 
-<div id="cursor-glow"></div>
+<div id="cursor-glow">
+  <div class="blob" id="blob1"></div>
+  <div class="blob" id="blob2"></div>
+  <div class="blob" id="blob3"></div>
+</div>
 
 <header>
   <h1>МАССАЖ И ЭПИЛЯЦИЯ</h1>
@@ -435,13 +445,27 @@ function toggleCategory(btn, id) {
   }
 }
 
+var mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+var blobs = [
+  { el: document.getElementById('blob1'), x: mouseX, y: mouseY, speed: 0.06 },
+  { el: document.getElementById('blob2'), x: mouseX, y: mouseY, speed: 0.03 },
+  { el: document.getElementById('blob3'), x: mouseX, y: mouseY, speed: 0.09 }
+];
+
 document.addEventListener('mousemove', function(e) {
-  var glow = document.getElementById('cursor-glow');
-  var xPercent = (e.clientX / window.innerWidth) * 100;
-  var yPercent = (e.clientY / window.innerHeight) * 100;
-  glow.style.setProperty('--x', xPercent + '%');
-  glow.style.setProperty('--y', yPercent + '%');
+  mouseX = e.clientX;
+  mouseY = e.clientY;
 });
+
+function animateBlobs() {
+  blobs.forEach(function(b) {
+    b.x += (mouseX - b.x) * b.speed;
+    b.y += (mouseY - b.y) * b.speed;
+    b.el.style.transform = 'translate(' + (b.x - 250) + 'px, ' + (b.y - 250) + 'px)';
+  });
+  requestAnimationFrame(animateBlobs);
+}
+animateBlobs();
 </script>
 
 </body>
