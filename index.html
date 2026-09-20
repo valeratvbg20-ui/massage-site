@@ -7,56 +7,50 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <meta name="description" content="Массаж и эпиляция в Луганске: аппаратный и ручной массаж, коррекция фигуры, RF-лифтинг, LPG-массаж, лазерная эпиляция, маникюр, солярий для мужчин и женщин. Кв. Гагарина 27. Запись по телефону +7 (959) 254-34-04.">
 <meta name="keywords" content="массаж луганск, спа луганск, эпиляция луганск, лазерная эпиляция луганск, коррекция фигуры луганск, rf лифтинг луганск, lpg массаж луганск, вакуумный массаж луганск, кавитация луганск, липосакция луганск, маникюр луганск, солярий луганск, красота луганск, косметология луганск">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "Массаж и эпиляция",
+  "image": "https://massage-luhansk.ru/favicon.png",
+  "telephone": ["+7 959 254 34 04", "+7 959 018 76 41"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "кв. Гагарина, 27",
+    "addressLocality": "Луганск",
+    "addressCountry": "RU"
+  },
+  "url": "https://massage-luhansk.ru",
+  "openingHours": "Mo-Su 08:00-20:00"
+}
+</script>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
     position: relative;
-    background: radial-gradient(circle at 30% 30%, #7209b7, #050014 60%),
-                radial-gradient(circle at 70% 70%, #c724b1, transparent 60%),
-                #050014;
-    color: #f0e6ff;
+    background: linear-gradient(45deg, #1a1200, #3d2b00, #b45f06, #e67e22, #f1c40f, #6a9a1f, #3d2b00, #1a1200);
+    background-size: 500% 500%;
+    animation: shimmer 16s ease-in-out infinite;
+    color: #fff3e0;
     font-family: Georgia, 'Times New Roman', serif;
     line-height: 1.6;
     overflow-x: hidden;
   }
 
-  #cursor-glow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 0;
-    overflow: hidden;
-  }
-
-  .blob {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    filter: blur(90px);
-    opacity: 0.55;
-    will-change: transform;
-  }
-  #blob1 { background: #9d4edd; }
-  #blob2 { background: #c724b1; }
-  #blob3 { background: #3a0ca3; }
-
-  body > *:not(#cursor-glow) {
-    position: relative;
-    z-index: 1;
+  @keyframes shimmer {
+    0% { background-position: 0% 0%; }
+    25% { background-position: 100% 50%; }
+    50% { background-position: 50% 100%; }
+    75% { background-position: 0% 50%; }
+    100% { background-position: 0% 0%; }
   }
 
   @keyframes textShimmer {
-    0% { color: #c724b1; }
-    33% { color: #9d4edd; }
-    66% { color: #3a0ca3; }
-    100% { color: #c724b1; }
+    0% { color: #f1c40f; }
+    33% { color: #e67e22; }
+    66% { color: #8bc34a; }
+    100% { color: #f1c40f; }
   }
 
   .shimmer-text {
@@ -65,8 +59,8 @@
   .about-box p { margin-bottom: 12px; }
   .about-box p:last-child { margin-bottom: 0; }
 
-  h1, h2, h3 { color: #9d4edd; }
-  a { color: #9d4edd; text-decoration: none; }
+  h1, h2, h3 { color: #f1c40f; }
+  a { color: #f1c40f; text-decoration: none; }
 
   header {
     text-align: center;
@@ -75,12 +69,12 @@
   header h1 {
     font-size: 2.2em;
     letter-spacing: 4px;
-    text-shadow: 0 0 14px rgba(157,78,221,0.5);
+    text-shadow: 0 0 14px rgba(241,196,15,0.5);
   }
   header h2 {
     font-size: 1.3em;
     letter-spacing: 8px;
-    color: #9d4edd;
+    color: #f1c40f;
     margin-top: 5px;
     font-weight: normal;
   }
@@ -101,8 +95,8 @@
 
   .menu-btn {
     width: 100%;
-    background: #0a0a0a;
-    color: #9d4edd;
+    background: #140f00;
+    color: #f1c40f;
     font-weight: bold;
     font-size: 1.15em;
     letter-spacing: 2px;
@@ -111,12 +105,12 @@
     border-radius: 14px;
     text-align: center;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
     box-shadow: 0 4px 14px rgba(0,0,0,0.5);
   }
   .menu-btn:hover {
-    background: #9d4edd;
-    color: #0a0a0a;
+    background: #f1c40f;
+    color: #140f00;
     transform: translateY(-2px);
   }
 
@@ -129,8 +123,8 @@
 
   .category-btn {
     width: 100%;
-    background: #0a0a0a;
-    color: #9d4edd;
+    background: #140f00;
+    color: #f1c40f;
     border: 1px solid #000;
     padding: 18px 25px;
     text-align: left;
@@ -142,14 +136,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: 0.3s;
+    transition: background 0.3s;
   }
-  .category-btn:hover { background: #1a1a1a; }
-  .category-btn.active { background: #9d4edd; color: #000; }
+  .category-btn:hover { background: #241c00; }
+  .category-btn.active { background: #f1c40f; color: #000; }
 
   .service-list {
     display: none;
-    background: #0f0f0f;
+    background: #120e00;
     margin-bottom: 15px;
     border-left: 2px solid #000;
     border-radius: 0 0 10px 10px;
@@ -159,10 +153,10 @@
     display: flex;
     justify-content: space-between;
     padding: 14px 25px;
-    border-bottom: 1px solid #1e1e1e;
+    border-bottom: 1px solid #241c00;
   }
   .service-item:last-child { border-bottom: none; }
-  .service-item span.price { color: #9d4edd; font-weight: bold; white-space: nowrap; margin-left: 15px; }
+  .service-item span.price { color: #f1c40f; font-weight: bold; white-space: nowrap; margin-left: 15px; }
 
   .gallery-grid {
     display: grid;
@@ -170,7 +164,7 @@
     gap: 15px;
   }
   .gallery-placeholder {
-    background: #0f0f0f;
+    background: #120e00;
     border: 1px dashed #000;
     border-radius: 12px;
     aspect-ratio: 1;
@@ -196,14 +190,15 @@
   }
 
   .about-box {
-    background: #0f0f0f;
+    background: #120e00;
     border: 1px solid #000;
     padding: 30px;
     border-radius: 14px;
+    margin-bottom: 20px;
   }
 
   .contacts p { margin-bottom: 12px; font-size: 1.05em; }
-  .contacts .label { color: #9d4edd; }
+  .contacts .label { color: #f1c40f; }
 
   .action-buttons {
     display: flex;
@@ -217,13 +212,19 @@
     padding: 14px 28px;
     border: 1px solid #000;
     border-radius: 14px;
-    color: #9d4edd;
+    color: #f1c40f;
     font-weight: bold;
     letter-spacing: 1px;
-    transition: 0.3s;
-    background: #0a0a0a;
+    transition: background 0.3s, color 0.3s;
+    background: #140f00;
   }
-  .action-btn:hover { background: #9d4edd; color: #000; }
+  .action-btn:hover { background: #f1c40f; color: #000; }
+
+  iframe {
+    max-width: 100%;
+    border-radius: 12px;
+    margin-top: 20px;
+  }
 
   footer {
     text-align: center;
@@ -231,15 +232,22 @@
     color: #999;
     font-size: 0.85em;
   }
+
+  .menu-btn:focus-visible,
+  .category-btn:focus-visible,
+  .action-btn:focus-visible {
+    outline: 2px solid #f1c40f;
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    body { animation: none; }
+    .shimmer-text { animation: none; color: #f1c40f; }
+    * { transition: none !important; }
+  }
 </style>
 </head>
 <body>
-
-<div id="cursor-glow">
-  <div class="blob" id="blob1"></div>
-  <div class="blob" id="blob2"></div>
-  <div class="blob" id="blob3"></div>
-</div>
 
 <header>
   <h1>МАССАЖ И ЭПИЛЯЦИЯ</h1>
@@ -250,20 +258,20 @@
   <a class="menu-btn" href="#services">УСЛУГИ И ЦЕНЫ</a>
   <a class="menu-btn" href="#gallery">КАРТИНКИ</a>
   <a class="menu-btn" href="#contacts">КОНТАКТЫ</a>
-  <a class="menu-btn" href="#about">О МАСТЕРЕ</a>
+  <a class="menu-btn" href="#about">О МАСТЕРАХ</a>
 </div>
 
 <section id="services">
   <h2 class="title">Услуги и цены</h2>
 
-  <button class="category-btn" onclick="toggleCategory(this,'cat1')">Ручной массаж <span>+</span></button>
+  <button class="category-btn" onclick="toggleCategory(this,'cat1')" aria-expanded="false" aria-controls="cat1">Ручной массаж <span>+</span></button>
   <div class="service-list" id="cat1">
     <div class="service-item"><span>Спина</span><span class="price">1500 ₽ / 40 мин</span></div>
     <div class="service-item"><span>Воротниковая зона</span><span class="price">1000 ₽ / 30 мин</span></div>
     <div class="service-item"><span>Всё тело</span><span class="price">2500 ₽ / 1 час</span></div>
   </div>
 
-  <button class="category-btn" onclick="toggleCategory(this,'cat2')">Коррекция фигуры и лица <span>+</span></button>
+  <button class="category-btn" onclick="toggleCategory(this,'cat2')" aria-expanded="false" aria-controls="cat2">Коррекция фигуры и лица <span>+</span></button>
   <div class="service-list" id="cat2">
     <div class="service-item"><span>Коррекция фигуры и лица (любая зона)</span><span class="price">1000 ₽ / 30 мин</span></div>
     <div class="service-item"><span>RF-лифтинг лица и тела (любая зона)</span><span class="price">1000 ₽ / 30 мин</span></div>
@@ -271,18 +279,18 @@
     <div class="service-item"><span>Вакуумный массаж (любая зона)</span><span class="price">1000 ₽ / 30 мин</span></div>
   </div>
 
-  <button class="category-btn" onclick="toggleCategory(this,'cat3')">Аппаратные процедуры <span>+</span></button>
+  <button class="category-btn" onclick="toggleCategory(this,'cat3')" aria-expanded="false" aria-controls="cat3">Аппаратные процедуры <span>+</span></button>
   <div class="service-list" id="cat3">
     <div class="service-item"><span>ВелаШейп</span><span class="price">2000 ₽ / 1 час</span></div>
     <div class="service-item"><span>LPG</span><span class="price">2000 ₽ / 1 час</span></div>
   </div>
 
-  <button class="category-btn" onclick="toggleCategory(this,'cat4')">Премиум-аппарат AnchorFree V8C2 <span>+</span></button>
+  <button class="category-btn" onclick="toggleCategory(this,'cat4')" aria-expanded="false" aria-controls="cat4">Премиум-аппарат AnchorFree V8C2 <span>+</span></button>
   <div class="service-list" id="cat4">
     <div class="service-item"><span>Субдермальный вибрационный массаж, всё тело</span><span class="price">2000 ₽ / 1 час</span></div>
   </div>
 
-  <button class="category-btn" onclick="toggleCategory(this,'cat5')">Кавитация, жиротоп, липосакция <span>+</span></button>
+  <button class="category-btn" onclick="toggleCategory(this,'cat5')" aria-expanded="false" aria-controls="cat5">Кавитация, жиротоп, липосакция <span>+</span></button>
   <div class="service-list" id="cat5">
     <div class="service-item"><span>Всё тело (кавитация, жиротоп)</span><span class="price">2000 ₽ / 1 час</span></div>
     <div class="service-item"><span>Живот + бока</span><span class="price">1500 ₽ / 45 мин</span></div>
@@ -301,7 +309,7 @@
     <div class="service-item"><span>Всё тело + лицо</span><span class="price">4000 ₽ / 2 часа</span></div>
   </div>
 
-  <button class="category-btn" onclick="toggleCategory(this,'cat6')">Аппаратный массаж — для мужчин <span>+</span></button>
+  <button class="category-btn" onclick="toggleCategory(this,'cat6')" aria-expanded="false" aria-controls="cat6">Аппаратный массаж — для мужчин <span>+</span></button>
   <div class="service-list" id="cat6">
     <div class="service-item"><span>Субдермальный вибрационный турбо-массаж, всё тело</span><span class="price">2000 ₽</span></div>
     <div class="service-item"><span>Липосакция / жиротоп (кавитация нового поколения), всё тело</span><span class="price">3000 ₽ / 1 час</span></div>
@@ -313,33 +321,33 @@
     <div class="service-item"><span>Комплекс процедур</span><span class="price">6000 ₽ / 2 часа</span></div>
   </div>
 
-  <button class="category-btn" onclick="toggleCategory(this,'cat7')">Лазерная эпиляция — женщины <span>+</span></button>
+  <button class="category-btn" onclick="toggleCategory(this,'cat7')" aria-expanded="false" aria-controls="cat7">Лазерная эпиляция — женщины <span>+</span></button>
   <div class="service-list" id="cat7">
-    <div class="service-item" style="color:#9d4edd; font-weight:bold; border-bottom:none; padding-bottom:2px;">Ноги</div>
+    <div class="service-item" style="color:#f1c40f; font-weight:bold; border-bottom:none; padding-bottom:2px;">Ноги</div>
     <div class="service-item"><span>Голени + колени</span><span class="price">1000 ₽</span></div>
     <div class="service-item"><span>Бёдра (любая зона)</span><span class="price">500 ₽</span></div>
     <div class="service-item"><span>Бёдра полностью</span><span class="price">1000 ₽</span></div>
     <div class="service-item"><span>Ноги полностью</span><span class="price">1500 ₽</span></div>
-    <div class="service-item" style="color:#9d4edd; font-weight:bold; border-bottom:none; padding-bottom:2px;">Бикини</div>
+    <div class="service-item" style="color:#f1c40f; font-weight:bold; border-bottom:none; padding-bottom:2px;">Бикини</div>
     <div class="service-item"><span>По линии</span><span class="price">500 ₽</span></div>
     <div class="service-item"><span>Классическое</span><span class="price">1000 ₽</span></div>
     <div class="service-item"><span>Глубокое</span><span class="price">1500 ₽</span></div>
     <div class="service-item"><span>Половые губы</span><span class="price">500 ₽</span></div>
     <div class="service-item"><span>Межъягодичная зона</span><span class="price">500 ₽</span></div>
     <div class="service-item"><span>Ягодицы</span><span class="price">500 ₽</span></div>
-    <div class="service-item" style="color:#9d4edd; font-weight:bold; border-bottom:none; padding-bottom:2px;">Руки</div>
+    <div class="service-item" style="color:#f1c40f; font-weight:bold; border-bottom:none; padding-bottom:2px;">Руки</div>
     <div class="service-item"><span>До локтя</span><span class="price">500 ₽</span></div>
     <div class="service-item"><span>Полностью</span><span class="price">1000 ₽</span></div>
-    <div class="service-item" style="color:#9d4edd; font-weight:bold; border-bottom:none; padding-bottom:2px;">Тело</div>
+    <div class="service-item" style="color:#f1c40f; font-weight:bold; border-bottom:none; padding-bottom:2px;">Тело</div>
     <div class="service-item"><span>Подмышки</span><span class="price">500 ₽</span></div>
     <div class="service-item"><span>Линия живота</span><span class="price">500 ₽</span></div>
     <div class="service-item"><span>Живот</span><span class="price">1000 ₽</span></div>
     <div class="service-item"><span>Поясница</span><span class="price">1000 ₽</span></div>
     <div class="service-item"><span>Спина</span><span class="price">1000 ₽</span></div>
     <div class="service-item"><span>Ареолы</span><span class="price">500 ₽</span></div>
-    <div class="service-item" style="color:#9d4edd; font-weight:bold; border-bottom:none; padding-bottom:2px;">Лицо</div>
+    <div class="service-item" style="color:#f1c40f; font-weight:bold; border-bottom:none; padding-bottom:2px;">Лицо</div>
     <div class="service-item"><span>Любая зона</span><span class="price">500 ₽</span></div>
-    <div class="service-item" style="color:#9d4edd; font-weight:bold; border-bottom:none; padding-bottom:2px;">Комплексы</div>
+    <div class="service-item" style="color:#f1c40f; font-weight:bold; border-bottom:none; padding-bottom:2px;">Комплексы</div>
     <div class="service-item"><span>Глубокое бикини + подмышки</span><span class="price">2000 ₽</span></div>
     <div class="service-item"><span>Бикини + ноги полностью</span><span class="price">2000 ₽</span></div>
     <div class="service-item"><span>Голени + подмышки</span><span class="price">1500 ₽</span></div>
@@ -347,22 +355,22 @@
     <div class="service-item"><span>Всё тело</span><span class="price">3000 ₽</span></div>
   </div>
 
-  <button class="category-btn" onclick="toggleCategory(this,'cat8')">Лазерная эпиляция — мужчины <span>+</span></button>
+  <button class="category-btn" onclick="toggleCategory(this,'cat8')" aria-expanded="false" aria-controls="cat8">Лазерная эпиляция — мужчины <span>+</span></button>
   <div class="service-list" id="cat8">
-    <div class="service-item" style="color:#9d4edd; font-weight:bold; border-bottom:none; padding-bottom:2px;">Лицо</div>
+    <div class="service-item" style="color:#f1c40f; font-weight:bold; border-bottom:none; padding-bottom:2px;">Лицо</div>
     <div class="service-item"><span>Зона над верхней губой</span><span class="price">1000 ₽</span></div>
     <div class="service-item"><span>Подбородок</span><span class="price">1000 ₽</span></div>
     <div class="service-item"><span>Щёки</span><span class="price">1000 ₽</span></div>
     <div class="service-item"><span>Лоб</span><span class="price">1000 ₽</span></div>
     <div class="service-item"><span>Лицо полностью</span><span class="price">3000 ₽</span></div>
-    <div class="service-item" style="color:#9d4edd; font-weight:bold; border-bottom:none; padding-bottom:2px;">Ноги</div>
+    <div class="service-item" style="color:#f1c40f; font-weight:bold; border-bottom:none; padding-bottom:2px;">Ноги</div>
     <div class="service-item"><span>Ноги полностью</span><span class="price">5000 ₽</span></div>
     <div class="service-item"><span>Голень + колено</span><span class="price">3100 ₽</span></div>
     <div class="service-item"><span>Голень + колено + пальцы</span><span class="price">3200 ₽</span></div>
     <div class="service-item"><span>Внутренняя часть бедра</span><span class="price">2000 ₽</span></div>
     <div class="service-item"><span>Задняя часть бедра</span><span class="price">2000 ₽</span></div>
     <div class="service-item"><span>Бёдра полностью</span><span class="price">3500 ₽</span></div>
-    <div class="service-item" style="color:#9d4edd; font-weight:bold; border-bottom:none; padding-bottom:2px;">Тело</div>
+    <div class="service-item" style="color:#f1c40f; font-weight:bold; border-bottom:none; padding-bottom:2px;">Тело</div>
     <div class="service-item"><span>Руки полностью</span><span class="price">3500 ₽</span></div>
     <div class="service-item"><span>Руки до локтя</span><span class="price">2300 ₽</span></div>
     <div class="service-item"><span>Кисти рук</span><span class="price">900 ₽</span></div>
@@ -373,13 +381,13 @@
     <div class="service-item"><span>Спина полностью</span><span class="price">4000 ₽</span></div>
     <div class="service-item"><span>Грудь полностью</span><span class="price">2400 ₽</span></div>
     <div class="service-item"><span>Ореолы груди</span><span class="price">1000 ₽</span></div>
-    <div class="service-item" style="color:#9d4edd; font-weight:bold; border-bottom:none; padding-bottom:2px;">Другие зоны</div>
+    <div class="service-item" style="color:#f1c40f; font-weight:bold; border-bottom:none; padding-bottom:2px;">Другие зоны</div>
     <div class="service-item"><span>Бикини классическое</span><span class="price">1900 ₽</span></div>
     <div class="service-item"><span>Бикини глубокое</span><span class="price">3500 ₽</span></div>
     <div class="service-item"><span>Шея</span><span class="price">1700 ₽</span></div>
   </div>
 
-  <button class="category-btn" onclick="toggleCategory(this,'cat9')">Уход за кожей, солярий, маникюр <span>+</span></button>
+  <button class="category-btn" onclick="toggleCategory(this,'cat9')" aria-expanded="false" aria-controls="cat9">Уход за кожей, солярий, маникюр <span>+</span></button>
   <div class="service-list" id="cat9">
     <div class="service-item"><span>Редуктор жира</span><span class="price">1000 ₽ / 30 мин</span></div>
     <div class="service-item"><span>Скраб-массаж</span><span class="price">2000 ₽ / 1 час</span></div>
@@ -395,36 +403,52 @@
 <section id="gallery">
   <h2 class="title">Картинки</h2>
   <div class="gallery-grid">
-    <div class="gallery-item"><img src="photo_2026-09-13_21-20-59.jpg" alt="Аппаратная коррекция фигуры"></div>
-    <div class="gallery-item"><img src="photo_2026-09-13_21-21-03.jpg" alt="Лазерная эпиляция"></div>
-    <div class="gallery-item"><img src="photo_2026-09-13_21-21-04.jpg" alt="Красота и уход"></div>
-    <div class="gallery-item"><img src="photo_2026-09-13_21-21-06.jpg" alt="Аппаратная коррекция ANCHORFREE"></div>
+    <div class="gallery-item"><img src="photo_2026-09-20_18-44-52.jpg" alt="Наталья — мастер" loading="lazy"></div>
+    <div class="gallery-item"><img src="photo_2026-09-20_18-44-49.jpg" alt="Лазерная эпиляция — акция" loading="lazy"></div>
+    <div class="gallery-item"><img src="photo_2026-09-20_18-44-44.jpg" alt="Маникюр" loading="lazy"></div>
+    <div class="gallery-item"><img src="photo_2026-09-20_18-44-46.jpg" alt="Липосакция без ножа" loading="lazy"></div>
+    <div class="gallery-item"><img src="photo_2026-09-20_18-44-47 (2).jpg" alt="ВелаШейп массаж" loading="lazy"></div>
+    <div class="gallery-item"><img src="photo_2026-09-20_18-44-47.jpg" alt="RF-лифтинг лица и тела" loading="lazy"></div>
+    <div class="gallery-item"><img src="photo_2026-09-20_18-44-49 (2).jpg" alt="LED-солярий" loading="lazy"></div>
+    <div class="gallery-item"><img src="photo_2026-09-13_21-20-59.jpg" alt="Аппаратная коррекция фигуры" loading="lazy"></div>
+    <div class="gallery-item"><img src="photo_2026-09-13_21-21-03.jpg" alt="Лазерная эпиляция" loading="lazy"></div>
+    <div class="gallery-item"><img src="photo_2026-09-13_21-21-04.jpg" alt="Красота и уход" loading="lazy"></div>
+    <div class="gallery-item"><img src="photo_2026-09-13_21-21-06.jpg" alt="Аппаратная коррекция ANCHORFREE" loading="lazy"></div>
   </div>
 </section>
 
 <section id="about">
-  <h2 class="title">О мастере</h2>
+  <h2 class="title">О мастерах</h2>
+
   <div class="about-box">
     <p class="shimmer-text" style="font-size:1.3em; text-align:center;">Красота, уход и стройность — с заботой о вас 💆‍♀️✨</p>
     <p>Здравствуйте! Меня зовут <span class="shimmer-text">Нина</span> 🌸</p>
     <p>Я сертифицированный мастер массажа и эпиляции, косметик-эстетист по уходу за лицом и телом.</p>
     <p>Приглашаю вас на процедуры для женщин и мужчин — для тех, кто хочет уделять больше внимания своему телу, коже и самочувствию.</p>
   </div>
+
+  <div class="about-box">
+    <p class="shimmer-text" style="font-size:1.3em; text-align:center;">Время позаботиться о себе 🌿✨</p>
+    <p>Привет! Меня зовут <span class="shimmer-text">Наталья</span> 🌼</p>
+    <p>Устали искать отдельно массажиста, мастера маникюра и ждать своей очереди в солярий? Я объединила самые востребованные услуги для вашей красоты и здоровья в одном месте.</p>
+    <p>Аппаратные методики (LPG, кавитация, RF) помогут скорректировать фигуру и снять отёчность, а ручной массаж — расслабит после рабочей недели. Стойкое покрытие для ногтей и аккуратный педикюр станут вашей визитной карточкой, а мягкий безопасный загар в LED-солярии подарит сияние в любое время года.</p>
+  </div>
 </section>
 
 <section class="contacts" id="contacts">
   <h2 class="title">Контакты и запись</h2>
   <p><span class="label">Адрес:</span> г. Луганск, кв. Гагарина, 27</p>
-  <p><span class="label">Телефон:</span> +7 (959) 254-34-04</p>
+  <p><span class="label">Телефоны:</span> +7 (959) 254-34-04, +7 (959) 018-76-41</p>
   <p><span class="label">Режим работы:</span> ежедневно, 8:00–20:00. Каждый день без выходных, по записи</p>
   <p><span class="label">Запись:</span> по телефону или сообщением в мессенджер</p>
 
   <div class="action-buttons">
-    <a class="action-btn" href="https://vk.ru/club223963015" target="_blank">VK — наша группа</a>
-    <a class="action-btn" href="https://max.ru/join/yAj3lE4dreA-FqlocysQjgYa1mwNdNO1-ZJdZTPWXJY" target="_blank">MAX — наша группа</a>
-    <a class="action-btn" href="https://yandex.ru/maps/222/luhansk/house/kvartal_gagarina_27/Z0AYdQ5mSUQFQFpifXl3eXpjZg==/?from=mapframe&ll=39.396012%2C48.568603&source=mapframe&utm_source=mapframe&z=17.3" target="_blank">Положение на карте</a>
-    <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=147575542436" width="560" height="400" frameborder="0"></iframe>"
+    <a class="action-btn" href="https://vk.ru/club223963015" target="_blank" rel="noopener noreferrer">VK — наша группа</a>
+    <a class="action-btn" href="https://max.ru/join/yAj3lE4dreA-FqlocysQjgYa1mwNdNO1-ZJdZTPWXJY" target="_blank" rel="noopener noreferrer">MAX — наша группа</a>
+    <a class="action-btn" href="https://yandex.ru/maps/222/luhansk/house/kvartal_gagarina_27/Z0AYdQ5mSUQFQFpifXl3eXpjZg==/?from=mapframe&ll=39.396012%2C48.568603&source=mapframe&utm_source=mapframe&z=17.3" target="_blank" rel="noopener noreferrer">Положение на карте</a>
   </div>
+
+  <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=147575542436" width="100%" height="400" frameborder="0" title="Карта — расположение салона"></iframe>
 </section>
 
 <footer>
@@ -439,34 +463,14 @@ function toggleCategory(btn, id) {
     list.classList.remove('open');
     btn.classList.remove('active');
     btn.querySelector('span').textContent = '+';
+    btn.setAttribute('aria-expanded', 'false');
   } else {
     list.classList.add('open');
     btn.classList.add('active');
     btn.querySelector('span').textContent = '−';
+    btn.setAttribute('aria-expanded', 'true');
   }
 }
-
-var mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
-var blobs = [
-  { el: document.getElementById('blob1'), x: mouseX, y: mouseY, speed: 0.06 },
-  { el: document.getElementById('blob2'), x: mouseX, y: mouseY, speed: 0.03 },
-  { el: document.getElementById('blob3'), x: mouseX, y: mouseY, speed: 0.09 }
-];
-
-document.addEventListener('mousemove', function(e) {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
-
-function animateBlobs() {
-  blobs.forEach(function(b) {
-    b.x += (mouseX - b.x) * b.speed;
-    b.y += (mouseY - b.y) * b.speed;
-    b.el.style.transform = 'translate(' + (b.x - 250) + 'px, ' + (b.y - 250) + 'px)';
-  });
-  requestAnimationFrame(animateBlobs);
-}
-animateBlobs();
 </script>
 
 </body>
