@@ -29,7 +29,7 @@
 
   body {
     position: relative;
-    background: linear-gradient(45deg, #1a1200, #3d2b00, #b45f06, #e67e22, #f1c40f, #6a9a1f, #3d2b00, #1a1200);
+    background: linear-gradient(45deg, #1a1200, #3d2b00, #b45f06, #e67e22, #f1c40f, #a8e063, #6a9a1f, #3d2b00, #1a1200);
     background-size: 500% 500%;
     animation: shimmer 16s ease-in-out infinite;
     color: #fff3e0;
@@ -66,19 +66,28 @@
     text-align: center;
     padding: 40px 20px 10px;
   }
+  .text-outline {
+    -webkit-text-stroke: 1.5px #000;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 14px rgba(241,196,15,0.5);
+  }
   header h1 {
     font-size: 2.2em;
     letter-spacing: 4px;
-    text-shadow: 0 0 14px rgba(241,196,15,0.5);
   }
-  header h2 {
+  header h2.sub1 {
     font-size: 1.3em;
-    letter-spacing: 8px;
+    letter-spacing: 5px;
     color: #f1c40f;
-    margin-top: 5px;
+    margin-top: 8px;
     font-weight: normal;
   }
-
+  header h2.sub2 {
+    font-size: 1em;
+    letter-spacing: 4px;
+    color: #f1c40f;
+    margin-top: 6px;
+    font-weight: normal;
+  }
   .menu {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -245,13 +254,24 @@
     .shimmer-text { animation: none; color: #f1c40f; }
     * { transition: none !important; }
   }
+
+  .gallery-caption {
+  text-align: center;
+  padding: 8px 5px;
+  background: #120e00;
+  color: #f1c40f;
+  font-size: 0.9em;
+  font-weight: bold;
+  }
+  
 </style>
 </head>
 <body>
 
 <header>
-  <h1>МАССАЖ И ЭПИЛЯЦИЯ</h1>
-  <h2>ЛУГАНСК</h2>
+  <h1 class="text-outline">МАССАЖ И ЭПИЛЯЦИЯ</h1>
+  <h2 class="sub1 text-outline">СОЛЯРИЙ И МАНИКЮР</h2>
+  <h2 class="sub2 text-outline">ЛУГАНСК</h2>
 </header>
 
 <div class="menu">
@@ -262,7 +282,7 @@
 </div>
 
 <section id="services">
-  <h2 class="title">Услуги и цены</h2>
+  <h2 class="title text-outline">Услуги и цены</h2>
 
   <button class="category-btn" onclick="toggleCategory(this,'cat1')" aria-expanded="false" aria-controls="cat1">Ручной массаж <span>+</span></button>
   <div class="service-list" id="cat1">
@@ -401,24 +421,24 @@
 </section>
 
 <section id="gallery">
-  <h2 class="title">Картинки</h2>
+  <h2 class="title text-outline">Картинки</h2>
   <div class="gallery-grid">
-    <div class="gallery-item"><img src="photo_2026-09-20_18-44-52.jpg" alt="Наталья — мастер" loading="lazy"></div>
-    <div class="gallery-item"><img src="photo_2026-09-20_18-44-49.jpg" alt="Лазерная эпиляция — акция" loading="lazy"></div>
-    <div class="gallery-item"><img src="photo_2026-09-20_18-44-44.jpg" alt="Маникюр" loading="lazy"></div>
-    <div class="gallery-item"><img src="photo_2026-09-20_18-44-46.jpg" alt="Липосакция без ножа" loading="lazy"></div>
-    <div class="gallery-item"><img src="photo_2026-09-20_18-44-47 (2).jpg" alt="ВелаШейп массаж" loading="lazy"></div>
-    <div class="gallery-item"><img src="photo_2026-09-20_18-44-47.jpg" alt="RF-лифтинг лица и тела" loading="lazy"></div>
-    <div class="gallery-item"><img src="photo_2026-09-20_18-44-49 (2).jpg" alt="LED-солярий" loading="lazy"></div>
-    <div class="gallery-item"><img src="photo_2026-09-13_21-20-59.jpg" alt="Аппаратная коррекция фигуры" loading="lazy"></div>
-    <div class="gallery-item"><img src="photo_2026-09-13_21-21-03.jpg" alt="Лазерная эпиляция" loading="lazy"></div>
-    <div class="gallery-item"><img src="photo_2026-09-13_21-21-04.jpg" alt="Красота и уход" loading="lazy"></div>
-    <div class="gallery-item"><img src="photo_2026-09-13_21-21-06.jpg" alt="Аппаратная коррекция ANCHORFREE" loading="lazy"></div>
+    <div class="gallery-item"><img src="photo_2026-09-20_18-44-52.jpg" alt="Наталья — мастер" loading="lazy"><p class="gallery-caption">Наталья</p></div>
+    <div class="gallery-item"><img src="photo_2026-09-20_18-44-49.jpg" alt="Лазерная эпиляция — акция" loading="lazy"><p class="gallery-caption">Эпиляция</p></div>
+    <div class="gallery-item"><img src="photo_2026-09-20_18-44-44.jpg" alt="Маникюр" loading="lazy"><p class="gallery-caption">Маникюр</p></div>
+    <div class="gallery-item"><img src="photo_2026-09-20_18-44-46.jpg" alt="Липосакция без ножа" loading="lazy"><p class="gallery-caption">Липосакция</p></div>
+    <div class="gallery-item"><img src="photo_2026-09-20_18-44-47 (2).jpg" alt="ВелаШейп массаж" loading="lazy"><p class="gallery-caption">ВелаШейп</p></div>
+    <div class="gallery-item"><img src="photo_2026-09-20_18-44-47.jpg" alt="RF-лифтинг лица и тела" loading="lazy"><p class="gallery-caption">RF-лифтинг</p></div>
+    <div class="gallery-item"><img src="photo_2026-09-20_18-44-49 (2).jpg" alt="LED-солярий" loading="lazy"><p class="gallery-caption">LED-солярий</p></div>
+    <div class="gallery-item"><img src="photo_2026-09-13_21-20-59.jpg" alt="Аппаратная коррекция фигуры" loading="lazy"><p class="gallery-caption">Коррекция фигуры</p></div>
+    <div class="gallery-item"><img src="photo_2026-09-13_21-21-03.jpg" alt="Лазерная эпиляция" loading="lazy"><p class="gallery-caption">Эпиляция</p></div>
+    <div class="gallery-item"><img src="photo_2026-09-13_21-21-04.jpg" alt="Красота и уход" loading="lazy"><p class="gallery-caption">Услуги</p></div>
+    <div class="gallery-item"><img src="photo_2026-09-13_21-21-06.jpg" alt="Аппаратная коррекция ANCHORFREE" loading="lazy"><p class="gallery-caption">До / После</p></div>
   </div>
 </section>
 
 <section id="about">
-  <h2 class="title">О мастерах</h2>
+  <h2 class="title text-outline">О мастерах</h2>
 
   <div class="about-box">
     <p class="shimmer-text" style="font-size:1.3em; text-align:center;">Красота, уход и стройность — с заботой о вас 💆‍♀️✨</p>
@@ -436,7 +456,7 @@
 </section>
 
 <section class="contacts" id="contacts">
-  <h2 class="title">Контакты и запись</h2>
+  <h2 class="title text-outline">Контакты и запись</h2>
   <p><span class="label">Адрес:</span> г. Луганск, кв. Гагарина, 27</p>
   <p><span class="label">Телефоны:</span> +7 (959) 254-34-04, +7 (959) 018-76-41</p>
   <p><span class="label">Режим работы:</span> ежедневно, 8:00–20:00. Каждый день без выходных, по записи</p>
