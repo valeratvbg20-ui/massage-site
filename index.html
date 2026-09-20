@@ -66,26 +66,16 @@
     text-align: center;
     padding: 40px 20px 10px;
   }
-  .text-outline {
-    -webkit-text-stroke: 1.5px #000;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 14px rgba(241,196,15,0.5);
-  }
   header h1 {
     font-size: 2.2em;
     letter-spacing: 4px;
+    text-shadow: 0 0 14px rgba(241,196,15,0.5);
   }
-  header h2.sub1 {
+  header h2 {
     font-size: 1.3em;
-    letter-spacing: 5px;
+    letter-spacing: 8px;
     color: #f1c40f;
-    margin-top: 8px;
-    font-weight: normal;
-  }
-  header h2.sub2 {
-    font-size: 1em;
-    letter-spacing: 4px;
-    color: #f1c40f;
-    margin-top: 6px;
+    margin-top: 5px;
     font-weight: normal;
   }
   .menu {
@@ -269,9 +259,9 @@
 <body>
 
 <header>
-  <h1 class="text-outline">МАССАЖ И ЭПИЛЯЦИЯ</h1>
-  <h2 class="sub1 text-outline">СОЛЯРИЙ И МАНИКЮР</h2>
-  <h2 class="sub2 text-outline">ЛУГАНСК</h2>
+  <h1>МАССАЖ И ЭПИЛЯЦИЯ</h1>
+  <h2 class="sub1">СОЛЯРИЙ И МАНИКЮР</h2>
+  <h2 class="sub2">ЛУГАНСК</h2>
 </header>
 
 <div class="menu">
@@ -282,7 +272,7 @@
 </div>
 
 <section id="services">
-  <h2 class="title text-outline">Услуги и цены</h2>
+  <h2 class="title">Услуги и цены</h2>
 
   <button class="category-btn" onclick="toggleCategory(this,'cat1')" aria-expanded="false" aria-controls="cat1">Ручной массаж <span>+</span></button>
   <div class="service-list" id="cat1">
@@ -421,7 +411,7 @@
 </section>
 
 <section id="gallery">
-  <h2 class="title text-outline">Картинки</h2>
+  <h2 class="title">Картинки</h2>
   <div class="gallery-grid">
     <div class="gallery-item"><img src="photo_2026-09-20_18-44-52.jpg" alt="Наталья — мастер" loading="lazy"><p class="gallery-caption">Наталья</p></div>
     <div class="gallery-item"><img src="photo_2026-09-20_18-44-49.jpg" alt="Лазерная эпиляция — акция" loading="lazy"><p class="gallery-caption">Эпиляция</p></div>
@@ -438,7 +428,7 @@
 </section>
 
 <section id="about">
-  <h2 class="title text-outline">О мастерах</h2>
+  <h2 class="title">О мастерах</h2>
 
   <div class="about-box">
     <p class="shimmer-text" style="font-size:1.3em; text-align:center;">Красота, уход и стройность — с заботой о вас 💆‍♀️✨</p>
@@ -456,7 +446,7 @@
 </section>
 
 <section class="contacts" id="contacts">
-  <h2 class="title text-outline">Контакты и запись</h2>
+  <h2 class="title">Контакты и запись</h2>
   <p><span class="label">Адрес:</span> г. Луганск, кв. Гагарина, 27</p>
   <p><span class="label">Телефоны:</span> +7 (959) 254-34-04, +7 (959) 018-76-41</p>
   <p><span class="label">Режим работы:</span> ежедневно, 8:00–20:00. Каждый день без выходных, по записи</p>
